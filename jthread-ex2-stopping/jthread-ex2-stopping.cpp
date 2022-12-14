@@ -112,7 +112,7 @@ int main(int argc, char** argv)
     if (iThread.get_stop_token().stop_possible())
     {
         LOG(COL_BLU, NAME, "Stopping the parameterless thread");
-        iThread.get_stop_source().request_stop();
+        iThread.request_stop();
     }
 
     // Delay before stopping the next
@@ -121,7 +121,7 @@ int main(int argc, char** argv)
     if (iThreadQuick.get_stop_token().stop_possible())
     {
         LOG(COL_BLU, NAME, "Stopping the quick red thread");
-        iThreadQuick.get_stop_source().request_stop();
+        iThreadQuick.request_stop();
     }
 
     // Deyal before stopping the next
@@ -130,7 +130,7 @@ int main(int argc, char** argv)
     if (iThreadSlow.get_stop_token().stop_possible())
     {
         LOG(COL_BLU, NAME, "Stopping the slow green thread");
-        iThreadSlow.get_stop_source().request_stop();
+        iThreadSlow.request_stop();
     }
 
     // Note - there's no need to join any of the threads

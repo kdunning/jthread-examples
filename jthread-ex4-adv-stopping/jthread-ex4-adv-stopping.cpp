@@ -105,7 +105,7 @@ static void stopThread(std::jthread& jt, int col,
     if (jt.get_stop_token().stop_possible())
     {
         LOG(col, name, "Stopping thread: " << thrName);
-        jt.get_stop_source().request_stop();
+        jt.request_stop();
     }
 }
 

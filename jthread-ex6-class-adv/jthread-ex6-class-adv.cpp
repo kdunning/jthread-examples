@@ -102,7 +102,7 @@ public:
     {
         if (mThread.get_stop_token().stop_possible())
         {
-            mThread.get_stop_source().request_stop();
+            mThread.request_stop();
             if (block)
             {
                 mThread.join();
