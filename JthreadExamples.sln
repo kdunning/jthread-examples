@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jthread-ex5-class-basic", "
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jthread-ex6-class-adv", "jthread-ex6-class-adv\jthread-ex6-class-adv.vcxproj", "{90727370-A831-4CB1-A203-4C34C05D042B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jthread-ex7-class-more", "jthread-ex7-class-more\jthread-ex7-class-more.vcxproj", "{77EF2C2E-9A2A-494B-B7A9-D4AC38B8116B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{90727370-A831-4CB1-A203-4C34C05D042B}.Release|x64.Build.0 = Release|x64
 		{90727370-A831-4CB1-A203-4C34C05D042B}.Release|x86.ActiveCfg = Release|Win32
 		{90727370-A831-4CB1-A203-4C34C05D042B}.Release|x86.Build.0 = Release|Win32
+		{77EF2C2E-9A2A-494B-B7A9-D4AC38B8116B}.Debug|x64.ActiveCfg = Debug|x64
+		{77EF2C2E-9A2A-494B-B7A9-D4AC38B8116B}.Debug|x64.Build.0 = Debug|x64
+		{77EF2C2E-9A2A-494B-B7A9-D4AC38B8116B}.Debug|x86.ActiveCfg = Debug|Win32
+		{77EF2C2E-9A2A-494B-B7A9-D4AC38B8116B}.Debug|x86.Build.0 = Debug|Win32
+		{77EF2C2E-9A2A-494B-B7A9-D4AC38B8116B}.Release|x64.ActiveCfg = Release|x64
+		{77EF2C2E-9A2A-494B-B7A9-D4AC38B8116B}.Release|x64.Build.0 = Release|x64
+		{77EF2C2E-9A2A-494B-B7A9-D4AC38B8116B}.Release|x86.ActiveCfg = Release|Win32
+		{77EF2C2E-9A2A-494B-B7A9-D4AC38B8116B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

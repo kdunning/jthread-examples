@@ -17,3 +17,7 @@ g++ -std=c++20 -o ex5 jthread-ex5-class-basic/jthread-ex5-class-basic.cpp
 
 echo "Building Example 6"
 g++ -std=c++20 -o ex6 jthread-ex6-class-adv/jthread-ex6-class-adv.cpp
+
+echo "Building Example 7"
+g++ -std=c++20 -o ex7 jthread-ex7-class-more/jthread-ex7-class-more.cpp
+
