@@ -1,0 +1,26 @@
+name: Embed code into readme
+
+on:
+  push:
+    branches:
+      - main
+      - test
+
+jobs:
+  embed-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persistent-credentials: false
+          fetch-depth: 0
+          ref: refs/heads/${{ github.head_ref }}
+      - uses: tokusumi/markdown-embed-code@v1.0.0
+        with:
+          markdown: "README.md"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          message: "Synchronising README.md"
+          silent: false
+      - name: Build All
+        # Runs the build script to make sure they build
+        run: ./build_all.sh

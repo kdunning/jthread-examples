@@ -61,9 +61,14 @@ int main(int argc, char** argv)
     std::jthread uThreadSlow(uninterruptibleArgs, "Slow Thread", 3000ms);
 
     // There is no need to join any std::jthread, however, this can be used to
-    // print the final line of this main function, such that it appears after
-    // the quick thread, but before the slow thread.
-    uThread.join();
+    // carry out an action once the thread has completed. In this case, we start
+    // one final thread and let it run without joining.
+    uThreadSlow.join();
+
+    // Final thread, runs without joining.
+    std::jthread uFinalThread(uninterruptibleArgs, "Final Thread", 100ms);
+
+
     LOG("Main", "About to leave the main thread");
     return 0;
 }
