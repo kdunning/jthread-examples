@@ -7,7 +7,7 @@ You can either load the project/solution into Visual studio, or the root directo
 ### Linux
 A (very) simple shell script, `build_all.sh` exists in the root directory, allowing you to build all examples. You can, however build with:
 
-```bash:../build_all.sh [4]
+```bash:../build_all.sh -s4
 g++ -std=c++20 -o ex1 jthread-ex1-basic/jthread-ex1-basic.cpp
 ```
 
@@ -16,7 +16,7 @@ There are two uninterruptable functions, one with and one without arguments. Thi
 
 The function without arguments simply calls the other with default arguments, so we shall focus on that.
 
-```cpp:jthread-ex1-basic.cpp    [20-31]
+```cpp:jthread-ex1-basic.cpp    -s20 -e31
 /// @brief  A function that takes in two arguments and blocks until completion.
 /// @param  name    The name given to this action
 /// @param  delay   The time this function will run for
@@ -37,36 +37,36 @@ The parameter `name` is to aid visibility and logging, and `delay` sets the amou
 To demonstrate this working, three threads are created.
 
 ### Thread Without Arguments
-``` cpp:jthread-ex1-basic.cpp    [43-45]
-    // Runs the function without arguments - this will run for a set length of
-    // time - in this example, deliberately longer than thread uThreadQuick.
-    std::jthread uThread(uninterruptible);
+``` cpp:jthread-ex1-basic.cpp    -s 43 -e 45 -is4
+// Runs the function without arguments - this will run for a set length of
+// time - in this example, deliberately longer than thread uThreadQuick.
+std::jthread uThread(uninterruptible);
 ```
 Here we can see a simple creation of the thread with just one argument passed in; the function name to run. This will run for the default length of time with the default name, as seen below:
-``` cpp:jthread-ex1-basic.cpp    [37]
-    uninterruptibleArgs("Unnamed Thread", 500ms);
+``` cpp:jthread-ex1-basic.cpp    -s 37 -is4
+uninterruptibleArgs("Unnamed Thread", 500ms);
 ```
 
 ### The "Quick" Thread
 This thread is designed to only run for a short period of time.
-``` cpp:jthread-ex1-basic.cpp    [51-53]
-    // Runs the function with arguments. This will complete before the previous
-    // thread.
-    std::jthread uThreadQuick(uninterruptibleArgs, "Quick Thread", 25ms);
+``` cpp:jthread-ex1-basic.cpp    -s51 -e53  -is4
+// Runs the function with arguments. This will complete before the previous
+// thread.
+std::jthread uThreadQuick(uninterruptibleArgs, "Quick Thread", 25ms);
 ```
 It makes use of the parameterised method, passing in a shorter time than the default.
 
 ### The "Slow" Thread
 This thread is designed to run for longer than any of the others, like the "quick" thread, it passes in parameters on creation of the thread.
-``` cpp:jthread-ex1-basic.cpp    [59-61]
-    // Runs the function with arguments. This will complete last, after all of
-    // the other threads (except main)
-    std::jthread uThreadSlow(uninterruptibleArgs, "Slow Thread", 3000ms);
+``` cpp:jthread-ex1-basic.cpp    -s59 -e61  -is4
+// Runs the function with arguments. This will complete last, after all of
+// the other threads (except main)
+std::jthread uThreadSlow(uninterruptibleArgs, "Slow Thread", 3000ms);
 ```
 
 ### Joining
 With `std::jthread`, there is often no need to join the thread, as the destructor will join automatically if the thread is joinable. This means that the line:
-``` cpp:jthread-ex1-basic.cpp    [66:69]
+``` cpp:jthread-ex1-basic.cpp    -s 66 -e69  -is4
     uThreadSlow.join();
 
     // Final thread, runs without joining.
