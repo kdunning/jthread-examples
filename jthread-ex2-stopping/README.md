@@ -7,14 +7,17 @@ You can either load the project/solution into Visual studio, or the root directo
 ### Linux
 A (very) simple shell script, `build_all.sh` exists in the root directory, allowing you to build all examples. You can, however build with:
 
-```bash:../build_all.sh [7]
+```bash:../build_all.sh -s 7
 g++ -std=c++20 -o ex2 jthread-ex2-stopping/jthread-ex2-stopping.cpp
 ```
+
+## Stop sources and tokens
+A `std::stop_source` (see [documentation](TODO)) is a new class - TODO add description and link to `std::stop_token`.
 
 ## Describing the function
 As with the previous example, there are two functions; one with arguments, one without. The latter calls the former with some default parameters.
 
-```cpp:jthread-ex2-stopping.cpp [52-74]
+```cpp:jthread-ex2-stopping.cpp -s52 -e74
 /// @brief  A function that takes in a stop_token from the jthread, and three 
 ///         user arguments. This function observes the stop_token to exit 
 ///         politely.
